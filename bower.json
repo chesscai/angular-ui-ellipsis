@@ -1,0 +1,25 @@
+{
+  "name": "angular-ui-ellipsis",
+  "version": "0.0.1",
+  "authors": [
+    "caixiangqi <caixiangqi@gomo.com>"
+  ],
+  "description": "angular文字显示控件",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.4.8"
+  },
+  "main": [
+    "dist/angular-ui-ellipsis.min.js",
+    "dist/angular-ui-ellipsis.min.css"
+  ]
+}

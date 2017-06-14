@@ -1,0 +1,90 @@
+/*!
+* angular-ui-ellipsis
+* https://github.com/chesscai/angular-ui-ellipsis
+* v0.0.1
+*/
+.hide{
+	display: none;
+}
+.angular-ui-ellipsis{
+	position: relative;
+	cursor: pointer;
+	.ellipsis-value{
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	.whole-value{
+		pointer-events: none;
+		visibility: none;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 9;//mast higher then ellipsis-symbol
+		font-size: 12px;
+		color: #fff;
+		background: rgba(0,0,0,0.7);
+		border-radius: 5px;
+		padding: 5px;
+		box-sizing: border-box;
+		-webkit-transform: translateY(10px);
+		transform: translateY(10px);
+		-webkit-transition: all 0.2s ease;
+		transition: all 0.2s ease;
+	}
+
+	// ellipsis-hover
+	&.hover{
+		&:hover,
+		&:active{
+			.whole-value{
+				pointer-events: auto;
+				visibility: visible;
+				opacity: 1;
+				-webkit-transform: translateY(0);
+				transform: translateY(0);
+			}
+		}
+	}
+
+	// ellipsis-click
+	&.click{
+		.ellipsis-value{
+			overflow: visible;
+			white-space: normal;
+		}
+	}
+
+	// ellipsis-read-more: only single line
+	&.read-more{
+		padding-right: 88px;
+		box-sizing: border-box;
+		&:after{
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			content: 'read more';
+			color: #f00;
+		}
+	}
+
+	// ellipsis-multiline
+	&.multiline{
+		.ellipsis-value{
+			position: relative;
+			white-space: normal;
+			// ellipsis-read-more: only multiline
+			.ellipsis-symbol{
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				padding-left: 40px;
+				padding-right: 5px;
+				span{
+					color: #f00;
+				}
+			}
+		}
+	}
+}

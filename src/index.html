@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>angular-ui-ellipsis</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+<link rel="icon" href="favicon.ico">
+
+<!-- produce -->
+<link rel="stylesheet" href="../dist/angular-ui-ellipsis.min.css">
+
+<!-- debug -->
+<!-- <link rel="stylesheet" href="css/angular-ui-ellipsis.css"> -->
+<style>
+	body{
+		margin: 0;
+	    padding: 20px;
+	    box-sizing: border-box;
+	    background: #fff;
+	}
+	h2{
+		margin: 40px 0 10px;
+	}
+	code{
+		display: block;
+		margin: 10px 0;
+		color: #999;
+	}
+	table,thead,tbody{
+		width: 100%;
+	}
+	th,td{
+		border: 1px solid #aaa;
+	}
+	.main{
+		width: 600px;
+		margin: 0 auto;
+	}
+</style>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="MyCtrl as vm">
+
+		<div class="main">
+
+			<h2>default</h2>
+			<code>&lt;div ellipsis&gt;...&lt;/div&gt;</code>
+			<div ellipsis>{{vm.text}}</div>
+
+			<h2>show whole text when hover</h2>
+			<code>&lt;div ellipsis ellipsis-hover="true"&gt;...&lt;/div&gt;</code>
+			<div ellipsis 
+				 ellipsis-hover="true">{{vm.text}}</div>
+
+			<h2>toggle whole text when click</h2>
+			<code>&lt;div ellipsis ellipsis-click="true"&gt;...&lt;/div&gt;</code>
+			<div ellipsis 
+				 ellipsis-click="true">{{vm.text}}</div>
+
+			<h2>multiline</h2>
+			<code>&lt;div ellipsis ellipsis-multiline="3"&gt;...&lt;/div&gt;</code>
+			<div ellipsis 
+				 ellipsis-multiline="3">{{vm.text}}</div>
+
+			<h2>multiline with hover</h2>
+			<code>&lt;div ellipsis ellipsis-multiline="3" ellipsis-hover="true"&gt;...&lt;/div&gt;</code>
+			<div ellipsis 
+				 ellipsis-multiline="3"
+				 ellipsis-hover="true">{{vm.text}}</div>
+
+			<h2>multiline with click</h2>
+			<code>&lt;div ellipsis ellipsis-multiline="3" ellipsis-click="true"&gt;...&lt;/div&gt;</code>
+			<div ellipsis 
+				 ellipsis-multiline="3"
+				 ellipsis-click="true">{{vm.text}}</div>
+
+			<h2>ellipsis in table</h2>
+			<table border="0" cellpadding="0" cellspacing="0">
+				<thead>
+					<tr>
+						<th width="30%">default</th>
+						<th width="30%">hover</th>
+						<th width="40%">click</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>&lt;td ellipsis&gt;...&lt;/td&gt;</code></td>
+						<td><code>&lt;td ellipsis ellipsis-hover="true"&gt;...&lt;/td&gt;</code></td>
+						<td><code>&lt;td ellipsis ellipsis-click="true"&gt;...&lt;/td&gt;</code></td>
+					</tr>
+					<tr>
+						<td ellipsis>{{vm.text}}</td>
+						<td ellipsis ellipsis-hover="true">{{vm.text}}</td>
+						<td ellipsis ellipsis-click="true">{{vm.text}}</td>
+					</tr>
+					<tr>
+						<td><code>&lt;td ellipsis ellipsis-multiline="3"&gt;...&lt;/td&gt;</code></td>
+						<td><code>&lt;td ellipsis ellipsis-multiline="3" ellipsis-hover="true"&gt;...&lt;/td&gt;</code></td>
+						<td><code>&lt;td ellipsis ellipsis-multiline="3" ellipsis-click="true"&gt;...&lt;/td&gt;</code></td>
+					</tr>
+					<tr>
+						<td ellipsis ellipsis-multiline="3">{{vm.text}}</td>
+						<td ellipsis ellipsis-multiline="3" ellipsis-hover="true">{{vm.text}}</td>
+						<td ellipsis ellipsis-multiline="3" ellipsis-click="true">{{vm.text}}</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+		
+	</div>
+
+<script src="../bower_components/angular/angular.js"></script>
+
+<!-- produce -->
+<script src="../dist/angular-ui-ellipsis.min.js"></script>
+
+<!-- debug -->
+<!-- <script src="src/js/angular-ui-ellipsis.js"></script> -->
+
+<script>
+	(function() {
+	    'use strict';
+
+	    angular
+	        .module('myApp', ['angular-ui-ellipsis'])
+	        .controller('MyCtrl', myCtrl);
+
+	    function myCtrl() {
+	        var vm = this;
+	        vm.text = '一重山，两重山，山远天高烟水寒，相思枫叶丹。别来春半，触目柔肠断。闲梦远,南国正清秋。千里江山寒色远，芦花深处泊孤舟。笛在月明楼。还似旧时游上苑，车如流水马如龙；花月正春风。帘外雨潺潺，春意阑珊。罗衾不耐五更寒。梦里不知身是客，一晌贪欢。独自莫凭栏，无限江山，别时容易见时难。流水落花春去也，天上人间。'
+	    }
+
+	})();
+</script>
+
+</body>
+</html>
