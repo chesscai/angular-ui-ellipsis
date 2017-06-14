@@ -1,5 +1,6 @@
 ## angular文字显示控件
 github: [angular-ui-ellipsis](https://github.com/chesscai/angular-ui-ellipsis)
+demo: [codepen](https://codepen.io/chesscai/pen/BZLKEE/)
 
 ### options
 
